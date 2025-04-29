@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <meta name="description" content="Ilkin Azimzade's portfolio showcasing projects, interests, and contact information.">
+  <link href="styles.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <nav style="background: rgba(24, 24, 24, 0.8); backdrop-filter: blur(10px);">
+    <div class="nav-content">
+      <h1 class="animate-text" style="color: var(--primary-color)">Ilkin Azimzade</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="controls">
+      <div class="control-group">
+        <label for="charSet">Character Set:</label>
+        <select id="charSet" onchange="updateSettings()">
+          <option value="tech1">Tech/Code Symbols 1</option>
+          <option value="tech2">Tech/Code Symbols 2</option>
+          <option value="math">Math & Binary</option>
+          <option value="cryptic">Cryptic/Alien</option>
+          <option value="mixed">Mixed Languages</option>
+          <option value="alphabet">Alphabet</option>
+          <option value="matrix1">Matrix 1</option>
+          <option value="matrix2">Matrix 2</option>
+          <option value="matrix3">Chinese Characters</option>
+          <option value="matrix4">Japanese Kanji</option>
+          <option value="emoji1">Emoji 1</option>
+          <option value="emoji2">Emoji 2</option>
+          <option value="emoji3">Emoji 3</option>
+        </select>
+      </div>
+      
+      <div class="control-group">
+        <label for="customText">Custom Text:</label>
+        <textarea id="customText" class="custom-text" placeholder="Enter custom text..."></textarea>
+      </div>
+      
+      <div class="control-group">
+        <label for="revealSpeed">Reveal Speed:</label>
+        <input type="range" id="revealSpeed" min="1" max="10" value="10" onchange="updateSettings()">
+      </div>
+      
+      <div class="control-group">
+        <label for="changeFreq">Change Frequency:</label>
+        <input type="range" id="changeFreq" min="1" max="100" value="28" onchange="updateSettings()">
+      </div>
+      
+      <div class="control-group">
+        <label for="glowIntensity">Glow Intensity</label>
+        <input type="range" id="glowIntensity" min="0" max="20" value="8" onchange="updateGlow()">
+      </div>
+      
+      <div class="control-group">
+        <label>Colors:</label>
+        <div class="color-picker">
+          <input type="color" id="bgColor" value="#111111" class="color-input" onchange="updateColors()">
+          <input type="color" id="textColor" value="#00ff00" class="color-input" onchange="updateColors()">
+        </div>
+      </div>
+      
+      <button class="btn" onclick="playAnimation()">Reveal Text</button>
+    </div>
+    <div class="text-container" id="text"></div>
+    <div class="hero-content">
+      
+      
+      <div class="social-links" style="animation: fadeInUp 1s ease-out 0.6s forwards; opacity: 0">
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="interests">
+          <h3>My Interests</h3>
+          <div class="interest-grid">
+            <div class="interest-card">
+              <i class="fas fa-robot"></i>
+              <h4>Robotics</h4>
+              <p>Exploring the fascinating world of robotics and automation</p>
+            </div>
+            <div class="interest-card">
+              <i class="fas fa-code"></i>
+              <h4>Coding</h4>
+              <p>Learning to create and build with code</p>
+            </div>
+            <div class="interest-card">
+              <i class="fas fa-paw"></i>
+              <h4>Animals</h4>
+              <p>Animal lover and advocate for their well-being</p>
+            </div>
+            <div class="interest-card">
+              <i class="fas fa-tree"></i>
+              <h4>Nature</h4>
+              <p>Appreciating the beauty of the natural world</p>
+            </div>
+            <div class="interest-card">
+              <i class="fas fa-book"></i>
+              <h4>Reading</h4>
+              <p>Expanding knowledge through books and literature</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Recent Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x200" alt="Screenshot of Project 1 interface">
+          <h3>Project 1</h3>
+          <p>A web application built with modern technologies</p>
+          <div class="project-links">
+            <a href="#" class="btn" aria-label="View Project 1 live demo">Live Demo</a>
+            <a href="#" class="btn" aria-label="View Project 1 source code">Code</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://via.placeholder.com/300x200" alt="Screenshot of Project 2 interface">
+          <h3>Project 2</h3>
+          <p>An innovative solution for modern problems</p>
+          <div class="project-links">
+            <a href="#" class="btn" aria-label="View Project 2 live demo">Live Demo</a>
+            <a href="#" class="btn" aria-label="View Project 2 source code">Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="recent-updates">
+    <div class="container">
+      <h2>Recent Updates</h2>
+      <div class="updates-grid">
+        <div class="update-card youtube">
+          <h3>Latest YouTube Video</h3>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed?list=UU-lHJZR3Gqxm24_Vd_AJ5Yw&listType=user_uploads" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <div class="update-card instagram">
+          <h3>Latest Instagram Post</h3>
+          <div class="instagram-container">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/lknzmzdx" data-instgrm-version="14"></blockquote>
+            <script async src="//www.instagram.com/embed.js"></script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="container">
+      <h2>Photo Gallery</h2>
+      <div class="gallery-slider">
+        <button class="gallery-nav prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+        <button class="gallery-nav next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+        <div class="gallery-track">
+          <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=1" alt="Gallery Image 1">
+          </div>
+          <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=2" alt="Gallery Image 2">
+          </div>
+          <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=3" alt="Gallery Image 3">
+          </div>
+          <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=4" alt="Gallery Image 4">
+          </div>
+          <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=5" alt="Gallery Image 5">
+          </div>
+          <div class="gallery-item">
+            <img src="https://picsum.photos/400/300?random=6" alt="Gallery Image 6">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="loading">
+    <div class="container">
+      <h2>Loading Animations</h2>
+      <div class="loader-container">
+        <div class="loader loader1"><span></span></div>
+        <div class="loader loader2"><span></span></div>
+        <div class="loader loader3"><i></i></div>
+        <div class="loader loader4"><i></i></div>
+      </div>
+      <div class="loader-container">
+        <div class="loader loader1"><span></span></div>
+        <div class="loader loader2"><span></span></div>
+        <div class="loader loader3"><i></i></div>
+        <div class="loader loader4"><i></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <div class="contact-links-container">
+        <div class="contact-row">
+          <a href="mailto:ilkinazimzade@lknzmzd.com"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://linkedin.com/in/yourusername"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/yourusername"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+        <div class="contact-row">
+          <a href="https://m.youtube.com/@Lknzmzd"><i class="fab fa-youtube"></i> YouTube</a>
+          <a href="https://www.instagram.com/lknzmzdx"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 Your Portfolio. All rights reserved.</p>
+  </footer>
+  <script src="scripts.js"></script>
+  <script src="gallery.js"></script>
+</body>
+</html>
